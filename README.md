@@ -34,7 +34,7 @@
 
 ##### To get started, first make an account with MyShelf and login to see your personal homepage that shows books you have previously read, as well as your TBR (to be read) on the side.
 
-##### A Trello board was used to keep track of development progress and can be viewed [here]([https://trello.com/b/Vi9hiVsb/project-3-potlucky](https://trello.com/b/pcs2wwF3/myshelf)).
+##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/pcs2wwF3/myshelf).
 
 ##### The project itself was deployed and can be viewed [here](url).
 
