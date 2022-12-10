@@ -44,11 +44,11 @@
 
 #### _Entity Relationship Diagram_
 
-![MyShelf ERD]()
+![MyShelf ERD](https://i.imgur.com/St7F0Xk.png)
 
 #### _Component Hierarchy Diagram_
 
-![MyShelf Component Hierarchy Diagram]()
+![MyShelf Component Hierarchy Diagram](https://i.imgur.com/yBMznGQ.png)
 
 ---
 
