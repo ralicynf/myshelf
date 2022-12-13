@@ -5,10 +5,10 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Book from './pages/Book';
 import AddBook from './components/AddBook';
+import TBR from './pages/TBR';
 import { Routes, Route } from 'react-router-dom'
 import { CheckSession } from './services/Auth';
 import { useState, useEffect } from 'react'
-
 
 function App() {
   const [user, setUser] = useState(null)
@@ -31,7 +31,6 @@ function App() {
     localStorage.clear()
   }
 
-
   return (
     <div className="App">
       <NavBar user={user} handleLogout={handleLogout}/>
@@ -41,6 +40,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/addbook" element={<AddBook user={user} setUser={setUser} />} />
+          <Route path="/TBR" element={<TBR user={user} />} />
           <Route path="/book/:id" element={<Book user={user} />} />
         </Routes>
       </main>
