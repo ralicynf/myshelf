@@ -8,7 +8,7 @@ const AddBook = ({ user }) => {
     const initialState = {
         title: '',
         author: '',
-        completed: null,
+        completed: '',
         userId: user.id
     }
 

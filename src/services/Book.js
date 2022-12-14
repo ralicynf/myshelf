@@ -18,6 +18,15 @@ export const GetBooks = async () => {
     }
 }
 
+export const GetBookById = async () => {
+    try {
+        const res = await Client.get(`/'books/${bookId}`)
+        return res.data
+    } catch (error) {
+        throw error 
+    }
+}
+
 export const UpdateBook = async (bookId, update) => {
     try {
         const res = await Client.put(`/books/${bookId}`, update)
