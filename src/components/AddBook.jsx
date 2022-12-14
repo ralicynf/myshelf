@@ -8,7 +8,7 @@ const AddBook = ({ user }) => {
     const initialState = {
         title: '',
         author: '',
-        completed: '',
+        completed: null,
         userId: user.id
     }
 
@@ -52,11 +52,22 @@ const AddBook = ({ user }) => {
                         onChange={handleChange}
                         type='checkbox'
                         id='completed'
-                        value={formState.completed}
+                        value="true"
+                        data-value="true"
+                    />
+                </div>
+                <div className='add-book-form'>
+                    <label htmlFor="Add to TBR">Add to TBR?</label>
+                    <input
+                        onChange={handleChange}
+                        type='checkbox'
+                        id='completed'
+                        value="false"
+                        data-value="false"
                     />
                 </div>
                 <div className='btn'>
-                    <button id="sub-btn" type="submit">Add book!1</button>
+                    <button id="sub-btn" type="submit">Add book!</button>
                 </div>
             </form>
         </div>
