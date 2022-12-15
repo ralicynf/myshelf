@@ -18,7 +18,7 @@ const AddBook = ({ user }) => {
         book.preventDefault()
         const newBook = await CreateBook(formState)
         setFormState(initialState)
-        navigate(`/books/${newBook.id}`)
+        navigate(`/`)
     }
 
     const handleChange = (event) => {

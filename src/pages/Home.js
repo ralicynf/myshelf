@@ -22,9 +22,9 @@ const Home = () => {
     }, [])
 
     return (
-        <div>
+        <div className='page-width'>
             <h1>Welcome to your Library!</h1>
-            <section className='r-flex'>
+            <section className='flex-row wrap-row'>
                 {books.map((result) => 
                     <BookCard 
                         key={result.id}

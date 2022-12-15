@@ -39,6 +39,17 @@ body {
   color: #103942;
 }
 
+.book-names {
+  transform: rotate(-90deg)
+}
+
+.book-card, .book-card-name {
+  background-color: purple;
+  margin: 20px;
+  width: 100px;
+  height: 60vh
+}
+
 .center-column {
   justify-content: center;
 }
@@ -68,4 +79,8 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 0px 5px 0px 5px
+}
+
+.wrap-row {
+  flex-wrap: wrap;
 }

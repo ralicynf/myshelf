@@ -1,4 +1,3 @@
-import './App.css';
 import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import Register from './pages/Register';
