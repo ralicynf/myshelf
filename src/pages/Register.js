@@ -76,7 +76,7 @@ const Register = () => {
                             className='input-reg'
                             onChange={handleChange}
                             name='password'
-                            type='text'
+                            type='password'
                             placeholder='password'
                             value={formState.password}
                             required

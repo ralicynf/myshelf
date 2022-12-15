@@ -29,7 +29,7 @@ export const GetBookById = async (id) => {
 
 export const GetBooksByUser = async (userId) => {
     try {
-        const res = await Client.get(`/books/book/${userId}`)
+        const res = await Client.get(`/books/b/${userId}`)
         return res.data
     } catch (error) {
         throw error
