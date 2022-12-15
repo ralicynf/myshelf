@@ -29,6 +29,16 @@ a:active {
   text-decoration: none;
 }
 
+body {
+  background-image: url('https://i.imgur.com/oLoGJXr.jpg');
+  background-attachment: fixed;
+  background-position: center-center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
+  color: #103942;
+}
+
 .center-column {
   justify-content: center;
 }

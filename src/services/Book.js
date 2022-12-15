@@ -18,27 +18,27 @@ export const GetBooks = async () => {
     }
 }
 
-export const GetBookById = async () => {
+export const GetBookById = async (id) => {
     try {
-        const res = await Client.get(`/'books/${bookId}`)
+        const res = await Client.get(`/'books/${id}`)
         return res.data
     } catch (error) {
         throw error 
     }
 }
 
-export const UpdateBook = async (bookId, update) => {
+export const UpdateBook = async (id, update) => {
     try {
-        const res = await Client.put(`/books/${bookId}`, update)
+        const res = await Client.put(`/books/${id}`, update)
         return res.data
     } catch (error) {
         throw error
     }
 }
 
-export const DeleteBook = async (bookId) => {
+export const DeleteBook = async (id) => {
     try {
-        const res = await Client.delete(`/books/${bookId}`)
+        const res = await Client.delete(`/books/${id}`)
         return res.data
     } catch (error) {
         throw error
