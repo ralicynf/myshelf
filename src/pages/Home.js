@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import BookCard from '../components/BookCard'
 import { GetBooks } from '../services/Book'
+import Book from './Book'
+import axios from 'axios'
 
 
 const Home = () => {
@@ -8,13 +11,9 @@ const Home = () => {
     const [books, setBooks] = useState([])
     
     const handleBooks = async () => {
-        const bookData = await GetBooks()
-        console.log(bookData)
-        setBooks({
-            title: bookData.title,
-            author: bookData.author,
-            completed: bookData.completed
-        })
+        const bookData = await axios.get(`http://localhost:3001/myshelf/books/`)
+        //console.log(bookData)
+        setBooks(bookData.data)
         console.log(books)
     }
     
@@ -25,8 +24,16 @@ const Home = () => {
     return (
         <div>
             <h1>Welcome to your Library!</h1>
-            <section>
-                
+            <section className='r-flex'>
+                {books.map((result) => 
+                    <BookCard 
+                        key={result.id}
+                        id={result.id}
+                        title={result.title}
+                        author={result.author}
+                        completed={result.completed}
+                    />
+                )}
             </section>
         </div>
     )

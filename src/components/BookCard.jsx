@@ -2,7 +2,7 @@ const BookCard = (bookDetails) => {
 
     return (
         <div className='box'>
-            <div className="book-card" onClick={ () => {bookDetails.onClick(bookDetails.id)}}>
+            <div className="book-card">
                 <div className="recipe-card-name">
                     <h2>{bookDetails.title}</h2>
                     <h2>{bookDetails.author}</h2>
@@ -14,3 +14,5 @@ const BookCard = (bookDetails) => {
 }
 
 export default BookCard
+
+//onClick={ () => {bookDetails.onClick(bookDetails.id)
