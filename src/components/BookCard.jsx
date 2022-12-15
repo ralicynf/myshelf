@@ -2,12 +2,8 @@ const BookCard = (bookDetails) => {
 
     return (
         <div className='box'>
-            <div className="book-card">
-                
+                <div className="book-card" onClick={ () => {bookDetails.onClick(bookDetails.id)}}>
                     <h2 className="book-names rotate-text">{bookDetails.title}</h2>
-                    {/* <h2>{bookDetails.author}</h2>
-                    <h2>{bookDetails.completed}</h2> */}
-                
             </div>
         </div>
     )
@@ -15,4 +11,4 @@ const BookCard = (bookDetails) => {
 
 export default BookCard
 
-//onClick={ () => {bookDetails.onClick(bookDetails.id)
+//
