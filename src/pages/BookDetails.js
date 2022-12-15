@@ -63,24 +63,26 @@ const BookDetails = ({ user }) => {
     }, [user])
 
     return ( 
-        <div>
-            <div className='box'>
-                <div>
-                    <h1>{myBookDetails.title}</h1>
-                    <h3>{myBookDetails.author}</h3>
+        <section>
+            <div>
+                <div className='box'>
                     <div>
-                        {myBookDetails.completed === true ? (
-                            <h3>You have read this book!</h3>
-                        ) : (
-                            <h3>This is on your TBR!</h3>
-                        ) }
+                        <h1>{myBookDetails.title}</h1>
+                        <h3>{myBookDetails.author}</h3>
+                        <div>
+                            {myBookDetails.completed === true ? (
+                                <h3>You have read this book!</h3>
+                            ) : (
+                                <h3>This is on your TBR!</h3>
+                            ) }
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <BookReport />
-                </div>
             </div>
-        </div>
+            <div>
+                {/* <BookReport /> */}
+            </div>
+        </section>
     )
 }
 

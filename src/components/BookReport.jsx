@@ -4,23 +4,25 @@ import { GetBookReportByBook, CreateBookReport } from '../services/BookReport'
 const BookReport = ({ user, bookId }) => {
 
     console.log(user)
-    // const initialState = {
-    //     review: '',
-    //     rating: null,
-    //     readAgain: false,
-    //     userId: '',
-    //     bookId: bookId
-    // }
+
+    const initialState = {
+        review: '',
+        rating: null,
+        readAgain: false,
+        userId: 7,
+        bookId: 17
+    }
 
     const [bookReports, setBookReports] = useState([])
-    const [newBookReport, setNewBookReport] = useState()
+    const [newBookReport, setNewBookReport] = useState(initialState)
 
     const handleBookReports = async () => {
         const res = await GetBookReportByBook(bookId)
         if (res) {
             setBookReports(res)
         }
-    }
+    } 
+    console.log(bookReports)
 
     useEffect(() => {
         handleBookReports()
@@ -29,7 +31,7 @@ const BookReport = ({ user, bookId }) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         await CreateBookReport(newBookReport)
-        setNewBookReport()
+        setNewBookReport(initialState)
         handleBookReports()
     }
 
@@ -62,7 +64,7 @@ const BookReport = ({ user, bookId }) => {
                 <input
                     type="text"
                     id='review'
-                    value={newBookReport.review}
+                    value=''
                     onChange={handleChange}
                 />
             </form>
