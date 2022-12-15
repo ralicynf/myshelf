@@ -33,11 +33,10 @@ const Register = () => {
     return (
         <div>
             <div>
-                <form className='box the-form' onSubmit={handleSubmit}>
+                <form className='login-box the-form form-items' onSubmit={handleSubmit}>
                     <h2>Register as new user:</h2>
-                    <div className='flex-column'>
                         <div className='input-fields'>
-                            <label htmlFor='username'>Username   </label>
+                            <label htmlFor='username'>Username </label>
                             <input
                                 className='input-reg'
                                 onChange={handleChange}
@@ -87,7 +86,6 @@ const Register = () => {
                         <div className='btn'>
                             <button id='register-btn' type='submit'>Register</button>
                         </div>
-                    </div>
                 </form>
             </div>
         </div>

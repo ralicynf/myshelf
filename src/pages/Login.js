@@ -29,12 +29,11 @@ const Login = ({ setUser }) => {
     }
     }
 
-
     return (
         <div>
             <div>
-                <form className="login-box  the-form" onSubmit={handleSubmit}>
-                    <div>
+                <form className="login-box the-form form-items" onSubmit={handleSubmit}>
+                    <div className="input-fields">
                         <label htmlFor="email">Email   </label>
                         <input 
                             className='login-input'
@@ -46,7 +45,7 @@ const Login = ({ setUser }) => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className="input-fields">
                         <label htmlFor='password'>Password   </label>
                         <input 
                             className='login-input'

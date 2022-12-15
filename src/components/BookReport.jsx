@@ -8,7 +8,7 @@ const BookReport = ({ user, bookId }) => {
     //     review: '',
     //     rating: null,
     //     readAgain: false,
-    //     userId: reviewer.id,
+    //     userId: '',
     //     bookId: bookId
     // }
 

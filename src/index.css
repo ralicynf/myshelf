@@ -40,7 +40,7 @@ body {
   color: #1a2230;
 }
 
-.add-book-form {
+.add-book-form, .input-fields {
   text-align: left;
   display: flex;
   flex-direction: row;
