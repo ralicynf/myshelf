@@ -69,6 +69,8 @@ body {
 
 .book-card, .book-card-name {
   background-color: #242e3f;
+  filter: drop-shadow(5px 5px 5px #41729f);
+  border-radius: 4px;
   color: #effafc;
   margin: 20px;
   width: 100px;
@@ -80,6 +82,14 @@ body {
   height: 300px
 }
 
+.box {
+  background-color: #274472;
+  color:#effafc;
+  filter: drop-shadow(5px 5px 5px #242e3f);
+  margin: 100px 200px;
+  padding: 20px;
+  text-align: center;
+}
 
 .center-column {
   justify-content: center;

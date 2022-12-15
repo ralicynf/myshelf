@@ -17,7 +17,7 @@ const BookCard = (bookDetails) => {
 
     return (
         <section>
-        <div className='box'>
+        <div className='hello'>
             <div className="book-card" onClick={ () => {bookDetails.onClick(bookDetails.id)}}>
                 <div>
                     <h2 className="book-names rotate-text">{bookDetails.title}</h2>
