@@ -29,7 +29,7 @@ const NavBar = ({ user, handleLogout}) => {
                 <div>
                     <h1>MyShelf</h1>
                 </div>
-                <div className='center-column flex-row'>
+                <div className='center-column'>
                     {user ? authenticatedOptions : publicOptions}
                 </div>
             </nav>

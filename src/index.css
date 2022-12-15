@@ -35,7 +35,7 @@ body {
   background-position: center-center;
   background-repeat: repeat-y;
   background-size: cover;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #1a2230;
 }
 
@@ -45,12 +45,12 @@ body {
   color: #effafc;
   margin: 20px;
   width: 100px;
-  height: 60vh
+  height: 300px
 }
 
 .book-names {
   width: 100px;
-  height: 60vh
+  height: 300px
 }
 
 
@@ -61,6 +61,8 @@ body {
 .flex-row {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-column {
@@ -85,6 +87,12 @@ body {
   margin: 0px 5px 0px 5px
 }
 
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .page-width {
   text-align: center;
 }
@@ -95,4 +103,11 @@ body {
 
 .wrap-row {
   flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  body {
+    background-image: none;
+    background-color:#effafc
+  }
 }
