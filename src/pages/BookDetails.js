@@ -100,7 +100,7 @@ const BookDetails = ({ user }) => {
                         </div>
                         <div>
                         {myBookDetails.completed === true ? (
-                            <h3>You have read this book!</h3>
+                            <h3>You can't unread a book!</h3>
                         ) : (
                             <div>
                                 <h3>Completed?</h3>
