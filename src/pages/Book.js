@@ -11,20 +11,37 @@ const Book = ({ user }) => {
     let { id } = useParams()
     let navigate = useNavigate()
 
-    const [bookDetails, setBookDetails] = useState()
-
-    const getBookDetails = async () => {
-        const response = await axios.get(`http://localhost:3001/myshelf/books/${id}`)
-        console.log(response)
-        setBookDetails(response.data.book)
+    const initialState = {
+        title: '',
+        author: '',
+        completed: ''
     }
-    console.log(getBookDetails())
-    // const initialState = {
-    //     title: '',
-    //     author: '',
-    //     completed: '',
-    //     userId: user.id
-    // }
+
+    const [bookDetails, setBookDetails] = useState(initialState)
+
+    const handleBookDetails = async () => {
+        const response = await axios.get(`http://localhost:3001/myshelf/books/${id}`)
+        //console.log(response)
+        // let titled = response.data.title
+        // let authored = response.data.author
+        // let completedd = response.data.completed
+        let object = {
+            title: response.data.title,
+            author: response.data.author,
+            completed: response.data.completed
+        }
+        // if (completed === false) {
+        //     return "On TBR"
+        // } else if (completed === true) {
+        //     return "Completed"
+        // }
+        setBookDetails(object)
+        console.log(bookDetails)
+    }
+
+    
+    
+
 
     // const [bookDetails, setBookDetails] = useState(null)
     // const [edit, setEdit] = useState(false)
@@ -63,13 +80,17 @@ const Book = ({ user }) => {
     //     }
     // }
 
-    // useEffect(() => {
-    //     handleBookDetails()
-    // }, [user])
+    useEffect(() => {
+        handleBookDetails()
+    }, [user])
 
     return ( 
         <div>
-
+            <div className='box'>
+                <div>
+                    <h1></h1>
+                </div>
+            </div>
         </div>
     )
 }
