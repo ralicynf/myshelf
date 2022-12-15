@@ -27,6 +27,15 @@ export const GetBookById = async (id) => {
     }
 }
 
+export const GetBooksByUser = async (userId) => {
+    try {
+        const res = await Client.get(`/books/book/${userId}`)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}
+
 export const UpdateBook = async (id, update) => {
     try {
         const res = await Client.put(`/books/${id}`, update)
@@ -36,11 +45,11 @@ export const UpdateBook = async (id, update) => {
     }
 }
 
-export const DeleteBook = async (id) => {
-    try {
-        const res = await Client.delete(`/books/${id}`)
-        return res.data
-    } catch (error) {
-        throw error
-    }
-}
+// export const DeleteBook = async (id) => {
+//     try {
+//         const res = await Client.delete(`/books/${id}`)
+//         return res.data
+//     } catch (error) {
+//         throw error
+//     }
+// }

@@ -35,9 +35,9 @@ const Book = ({ user }) => {
         // } else if (completed === true) {
         //     return "Completed"
         // }
-        setBookDetails(object)
-        console.log(bookDetails)
+        console.log(response)
     }
+    handleBookDetails()
 
     
     
