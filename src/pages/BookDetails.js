@@ -6,6 +6,7 @@ import {
     DeleteBook
 } from '../services/Book'
 import axios from 'axios'
+import BookReport from '../components/BookReport'
 
 const BookDetails = ({ user }) => {
     let { id } = useParams()
@@ -74,6 +75,9 @@ const BookDetails = ({ user }) => {
                             <h3>This is on your TBR!</h3>
                         ) }
                     </div>
+                </div>
+                <div>
+                    <BookReport />
                 </div>
             </div>
         </div>

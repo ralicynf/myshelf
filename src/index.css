@@ -48,7 +48,7 @@ body {
   margin: 5px
 }
 
-#add-btn {
+#add-btn, #register-btn, #login-btn {
   width: 100px;
   text-align: center;
   background-color: #41729f;
@@ -62,7 +62,7 @@ body {
   font-weight: bold;
   transition-duration: 0.2s;
 }
-#add-btn:hover {
+#add-btn:hover, #register-btn:hover, #login-btn:hover {
   background-color: #effafc;
   color: #1a2230;
 }
