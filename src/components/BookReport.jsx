@@ -40,7 +40,7 @@ const BookReport = ({ user, bookId }) => {
     }
 
     return bookReports.length > 0 ? (
-        <div>
+        <div className='login-box the-form form-items' >
             {bookReports.map((report) => (
                 <div>
                     <p>{report.review}</p>
@@ -57,7 +57,7 @@ const BookReport = ({ user, bookId }) => {
             </form>
         </div>
     ) : (
-        <div>
+        <div className='login-box the-form form-items' >
             <h3>You have not left a review on this book yet. Leave one now!</h3>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='review'>Leave a review of the book!</label>

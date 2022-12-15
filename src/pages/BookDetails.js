@@ -7,6 +7,7 @@ import {
 } from '../services/Book'
 import axios from 'axios'
 import BookReport from '../components/BookReport'
+import { CreateBookReport } from '../services/BookReport'
 
 const BookDetails = ({ user }) => {
     let { id } = useParams()
@@ -20,6 +21,7 @@ const BookDetails = ({ user }) => {
 
     const [myBookDetails, setMyBookDetails] = useState(initialState)
     const [formState, setFormState] = useState(initialState)
+    const [edit, setEdit] = useState(false)
 
     const handleBookDetails = async () => {
         const response = await GetBookById(id)
@@ -27,7 +29,7 @@ const BookDetails = ({ user }) => {
     }
 
     // const handleClick = async (e) => {
-    //     await AddBookReport(id, { userId: user.id})
+    //     await CreateBookReport(id, { userId: user.id})
     //     handleBookDetails()
     // }
 
@@ -42,21 +44,22 @@ const BookDetails = ({ user }) => {
     //     handleBookDetails()
     // }
 
-    // const editClick = () => {
-    //     setEdit(true)
-    //     setFormState({
-    //         title: bookDetails.title,
-    //         author: bookDetails.author,
-    //         completed: bookDetails.completed
-    //     })
-    // }
+    const editClick = () => {
+        setEdit(true)
+        setFormState({
+            title: myBookDetails.title,
+            author: myBookDetails.author,
+            completed: myBookDetails.completed
+        })
+    }
 
-    // const deleteClick = async () => {
-    //     if (window.confirm('Are you sure you wish to delete this book from your library?')) {
-    //         await DeleteBook(bookDetails.id)
-    //         navigate('/')
-    //     }
-    // }
+    const deleteClick = async () => {
+        if (window.confirm('Are you sure you wish to delete this book from your library?')) {
+            await DeleteBook(myBookDetails.id)
+            navigate('/')
+        }
+    }
+
     const goToReview = () => {
         navigate(`/books/${id}/bookreport`)
     }
@@ -78,6 +81,7 @@ const BookDetails = ({ user }) => {
                                 <h3>This is on your TBR!</h3>
                             ) }
                         </div>
+                        <button onClick={deleteClick}>delete</button>
                     </div>
                 </div>
             </div>

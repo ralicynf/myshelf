@@ -45,11 +45,11 @@ export const UpdateBook = async (id, update) => {
     }
 }
 
-// export const DeleteBook = async (id) => {
-//     try {
-//         const res = await Client.delete(`/books/${id}`)
-//         return res.data
-//     } catch (error) {
-//         throw error
-//     }
-// }
+export const DeleteBook = async (id) => {
+    try {
+        const res = await Client.delete(`/books/${id}`)
+        return res.data
+    } catch (error) {
+        throw error
+    }
+}
