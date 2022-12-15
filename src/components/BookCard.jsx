@@ -1,36 +1,27 @@
-import axios from "axios"
-import { useParams, useNavigate } from "react-router-dom"
-
 const BookCard = (bookDetails) => {
-    let { id } = useParams()
-    let navigate = useNavigate()
 
-    const goHome = () => {
-        navigate('/')
-    }
-
-    const deleteBook = async () => {
-        const deleted = await axios.delete(`http://localhost:3001/myshelf/books/${id}`)
-        console.log("deleted", deleted)
-        goHome()
-    }
 
     return (
         <section>
         <div className='hello'>
             <div className="book-card" onClick={ () => {bookDetails.onClick(bookDetails.id)}}>
                 <div>
-                    <h2 className="book-names rotate-text">{bookDetails.title}</h2>
+                    {bookDetails.completed === true ? (
+                        <div className="book-names rotate-text" style={{backgroundColor:"#242e3f"}}>
+                            <h2>{bookDetails.title}</h2>
+                        </div>
+                    ) : (
+                        <div className="book-names rotate-text" 
+                            style={{backgroundColor: "#274472"}}>
+                            <h2>{bookDetails.title}</h2>
+                        </div>
+                        )}
+                    
                 </div>
             </div>
-        </div>
-        <div>
-            {/* <button onClick={deleteBook}>Delete</button> */}
         </div>
         </section>
     )
 }
 
 export default BookCard
-
-//

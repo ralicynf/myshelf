@@ -68,7 +68,6 @@ body {
 }
 
 .book-card, .book-card-name {
-  background-color: #242e3f;
   filter: drop-shadow(5px 5px 5px #41729f);
   border-radius: 4px;
   color: #effafc;
@@ -79,7 +78,8 @@ body {
 
 .book-names {
   width: 100px;
-  height: 300px
+  height: 325px;
+  border-radius: 5px;
 }
 
 .box {
@@ -142,6 +142,8 @@ body {
 
 .rotate-text {
   writing-mode: vertical-lr;
+  text-align: center;
+  
 }
 
 .the-form {

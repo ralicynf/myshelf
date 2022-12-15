@@ -8,7 +8,7 @@ const NavBar = ({ user, handleLogout}) => {
         authenticatedOptions = (
             <nav className="flex-row nav-links">
                 <Link to='/'>Home</Link>
-                <Link to='/TBR'>My TBR</Link>
+                {/* <Link to='/TBR'>My TBR</Link> */}
                 <Link to='/addBook'>Add Book</Link>
                 <Link onClick={handleLogout} to="/">Logout</Link>
             </nav>
