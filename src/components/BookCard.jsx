@@ -4,7 +4,7 @@ const BookCard = (bookDetails) => {
         <div className='box'>
             <div className="book-card">
                 
-                    <h2 className="book-names">{bookDetails.title}</h2>
+                    <h2 className="book-names rotate-text">{bookDetails.title}</h2>
                     {/* <h2>{bookDetails.author}</h2>
                     <h2>{bookDetails.completed}</h2> */}
                 
