@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import {
     GetBookById,
-    UpdateBook,
+    UpdatedBook,
     DeleteBook
 } from '../services/Book'
 import axios from 'axios'
@@ -39,7 +39,7 @@ const BookDetails = ({ user }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await UpdateBook(id, formState)
+        await UpdatedBook(id, formState)
         setEdit(false)
         handleBookDetails()
     }
@@ -73,7 +73,7 @@ const BookDetails = ({ user }) => {
                 <div className='box'>
                 <div>
                 {edit ? (
-                    <form obSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <div>
                             <h3>Title:</h3>
                             <input 

@@ -36,7 +36,16 @@ export const GetBooksByUser = async (userId) => {
     }
 }
 
-export const UpdateBook = async (id, update) => {
+// export const UpdateBook = async (id, update) => {
+//     try {
+//         const res = await Client.put(`/books/${id}`, update)
+//         return res.data
+//     } catch (error) {
+//         throw error
+//     }
+// }
+
+export const UpdatedBook = async (id, update) => {
     try {
         const res = await Client.put(`/books/${id}`, update)
         return res.data
