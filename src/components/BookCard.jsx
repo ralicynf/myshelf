@@ -1,8 +1,6 @@
 import axios from "axios"
 import { useParams, useNavigate } from "react-router-dom"
 
-
-
 const BookCard = (bookDetails) => {
     let { id } = useParams()
     let navigate = useNavigate()

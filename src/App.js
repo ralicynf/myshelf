@@ -2,7 +2,7 @@ import NavBar from './components/NavBar';
 import Home from './pages/Home';
 import Register from './pages/Register';
 import Login from './pages/Login';
-import Book from './pages/Book';
+import Book from './pages/BookDetails';
 import AddBook from './components/AddBook';
 import TBR from './pages/TBR';
 import { Routes, Route } from 'react-router-dom'
@@ -40,7 +40,7 @@ function App() {
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/addbook" element={<AddBook user={user} setUser={setUser} />} />
           <Route path="/TBR" element={<TBR user={user} />} />
-          <Route path="/book/:id" element={<Book user={user} />} />
+          <Route path="/books/:id" element={<Book user={user} />} />
         </Routes>
       </main>
     </div>

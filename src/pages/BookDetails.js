@@ -7,7 +7,7 @@ import {
 } from '../services/Book'
 import axios from 'axios'
 
-const Book = ({ user }) => {
+const BookDetails = ({ user }) => {
     let { id } = useParams()
     let navigate = useNavigate()
 
@@ -95,4 +95,4 @@ const Book = ({ user }) => {
     )
 }
 
-export default Book
+export default BookDetails
