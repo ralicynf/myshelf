@@ -27,47 +27,52 @@ const AddBook = ({ user }) => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <div className='add-book-form'>
-                    <label htmlFor="Book Title">Book Title: </label>
-                    <input
-                        onChange={handleChange}
-                        type='text'
-                        id='title'
-                        value={formState.title}
-                    />
+            <form onSubmit={handleSubmit} className='the-form'>
+                <div>
+                    <h2>Add A New Book: </h2>    
                 </div>
-                <div className='add-book-form'>
-                    <label htmlFor="Author">Author: </label>
-                    <input
-                        onChange={handleChange}
-                        type='text'
-                        id='author'
-                        value={formState.author}
-                    />
-                </div>
-                <div className='add-book-form'>
-                    <label htmlFor="Completed">Completed?</label>
-                    <input
-                        onChange={handleChange}
-                        type='checkbox'
-                        id='completed'
-                        value="true"
-                        data-value="true"
-                    />
-                </div>
-                <div className='add-book-form'>
-                    <label htmlFor="Add to TBR">Add to TBR?</label>
-                    <input
-                        onChange={handleChange}
-                        type='checkbox'
-                        id='completed'
-                        value="false"
-                        data-value="false"
-                    />
-                </div>
-                <div className='btn'>
-                    <button id="sub-btn" type="submit">Add book!</button>
+                <div className='form-items'>
+                    <div className='add-book-form'>
+                        <label htmlFor="Book Title">Book Title: </label>
+                        <input
+                            onChange={handleChange}
+                            type='text'
+                            id='title'
+                            value={formState.title}
+                        />
+                    </div>
+                    <div className='add-book-form'>
+                        <label htmlFor="Author">Author: </label>
+                        <input
+                            onChange={handleChange}
+                            type='text'
+                            id='author'
+                            value={formState.author}
+                        />
+                    </div>
+                    <div className='add-book-form'>
+                        <label htmlFor="Completed">Completed?</label>
+                        <input
+                            onChange={handleChange}
+                            type='checkbox'
+                            id='completed'
+                            value="true"
+                            data-value="true"
+                        />
+                    </div>
+                    <div className='add-book-form'>
+                        <label htmlFor="Add to TBR">Add to TBR?</label>
+                        <input
+                            onChange={handleChange}
+                            type='checkbox'
+                            id='completed'
+                            value="false"
+                            data-value="false"
+                        />
+                    </div>
+                    <div className='btn'>
+                        <button id="add-btn" type="submit">Add book!</button>
+                    </div>
                 </div>
             </form>
         </div>
