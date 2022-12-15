@@ -14,47 +14,24 @@ const BookDetails = ({ user }) => {
     const initialState = {
         title: '',
         author: '',
-        completed: ''
+        completed: false
     }
 
-    const [bookDetails, setBookDetails] = useState(initialState)
+    const [myBookDetails, setMyBookDetails] = useState(initialState)
+    const [formState, setFormState] = useState(initialState)
 
     const handleBookDetails = async () => {
-        const response = await axios.get(`http://localhost:3001/myshelf/books/${id}`)
-        //console.log(response)
-        // let titled = response.data.title
-        // let authored = response.data.author
-        // let completedd = response.data.completed
-        let object = {
-            title: response.data.title,
-            author: response.data.author,
-            completed: response.data.completed
-        }
-        // if (completed === false) {
-        //     return "On TBR"
-        // } else if (completed === true) {
-        //     return "Completed"
-        // }
-        console.log(response)
+        const response = await GetBookById(id)
+        setMyBookDetails(response)   
     }
-    handleBookDetails()
-
-    
-    
-
-
-    // const [bookDetails, setBookDetails] = useState(null)
-    // const [edit, setEdit] = useState(false)
-    // const [formState, setFormState] = useState(initialState)
-
-    // const handleBookDetails = async () => {
-    //     const data = await GetBookById(id)
-    //     setBookDetails(data)
-    // }
 
     // const handleClick = async (e) => {
     //     await AddBookReport(id, { userId: user.id})
     //     handleBookDetails()
+    // }
+
+    // const handleChange = (event) => {
+    //     setFormState({ ...formState, [event.target.id]: event.target.value })
     // }
 
     // const handleSubmit = async (e) => {
@@ -88,7 +65,15 @@ const BookDetails = ({ user }) => {
         <div>
             <div className='box'>
                 <div>
-                    <h1></h1>
+                    <h1>{myBookDetails.title}</h1>
+                    <h3>{myBookDetails.author}</h3>
+                    <div>
+                        {myBookDetails.completed === true ? (
+                            <h3>You have read this book!</h3>
+                        ) : (
+                            <h3>This is on your TBR!</h3>
+                        ) }
+                    </div>
                 </div>
             </div>
         </div>
