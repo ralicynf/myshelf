@@ -33,16 +33,16 @@ const BookDetails = ({ user }) => {
     //     handleBookDetails()
     // }
 
-    // const handleChange = (event) => {
-    //     setFormState({ ...formState, [event.target.id]: event.target.value })
-    // }
+    const handleChange = (event) => {
+        setFormState({ ...formState, [event.target.id]: event.target.value })
+    }
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault()
-    //     await UpdateBook(id, formState)
-    //     setEdit(false)
-    //     handleBookDetails()
-    // }
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        await UpdateBook(id, formState)
+        setEdit(false)
+        handleBookDetails()
+    }
 
     const editClick = () => {
         setEdit(true)
@@ -71,20 +71,58 @@ const BookDetails = ({ user }) => {
         <section>
             <div>
                 <div className='box'>
-                    <div>
-                        <h1>{myBookDetails.title}</h1>
-                        <h3>{myBookDetails.author}</h3>
+                <div>
+                {edit ? (
+                    <form obSubmit={handleSubmit}>
                         <div>
-                            {myBookDetails.completed === true ? (
-                                <h3>You have read this book!</h3>
-                            ) : (
-                                <h3>This is on your TBR!</h3>
-                            ) }
+                            <h3>Title:</h3>
+                            <input 
+                                type='text'
+                                value={formState.title}
+                                id='title'
+                                onChange={handleChange}
+                            />
                         </div>
-                        <button onClick={deleteClick}>delete</button>
+                        <div>
+                            <h3>Author:</h3>
+                            <input 
+                                type='text'
+                                value={formState.author}
+                                id='author'
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <h3>Completed?</h3>
+                            <input 
+                                type='checkbox'
+                                id='completed'
+                                value={formState.completed}
+                                data-value="true"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div>
+                            <button id="sub-btn" type='submit'>Submit </button>
+                        </div>
+                    </form>
+                ) : ( <div>
+                    <h1>{myBookDetails.title}</h1>
+                    <h3>{myBookDetails.author}</h3>
+                    <div>
+                        {myBookDetails.completed === true ? (
+                            <h3>You have read this book!</h3>
+                        ) : (
+                            <h3>This is on your TBR!</h3>
+                        ) }
                     </div>
+                    <button id="del-btn" onClick={deleteClick}>Delete</button>
+                    <button id="up-btn" onClick={editClick}>Update</button>
+                </div>)}
+            </div>
                 </div>
             </div>
+            
             <div className='flex-column center-column'>
                 <button id="review-btn" onClick={goToReview}>
                     <h3>Add a book review</h3>
