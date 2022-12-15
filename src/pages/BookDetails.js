@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import {
     GetBookById,
     UpdatedBook,
-    DeleteBook
+    DeleteBook 
 } from '../services/Book'
 import axios from 'axios'
 import BookReport from '../components/BookReport'
@@ -16,7 +16,7 @@ const BookDetails = ({ user }) => {
     const initialState = {
         title: '',
         author: '',
-        completed: false
+        completed: ''
     }
 
     const [myBookDetails, setMyBookDetails] = useState(initialState)
@@ -31,6 +31,12 @@ const BookDetails = ({ user }) => {
     // const handleClick = async (e) => {
     //     await CreateBookReport(id, { userId: user.id})
     //     handleBookDetails()
+    // }
+
+    // const onTBR = () => {
+    //     if (myBookDetails.completed === false) {
+    //         return false
+    //     }
     // }
 
     const handleChange = (event) => {
@@ -93,14 +99,20 @@ const BookDetails = ({ user }) => {
                             />
                         </div>
                         <div>
-                            <h3>Completed?</h3>
-                            <input 
-                                type='checkbox'
-                                id='completed'
-                                value={formState.completed}
-                                data-value="true"
-                                onChange={handleChange}
-                            />
+                        {myBookDetails.completed === true ? (
+                            <h3>You have read this book!</h3>
+                        ) : (
+                            <div>
+                                <h3>Completed?</h3>
+                                <input 
+                                    type='checkbox'
+                                    id='completed'
+                                    value='true'
+                                    data-value="true"
+                                    onChange={handleChange}
+                                />
+                            </div>
+                        ) }
                         </div>
                         <div>
                             <button id="sub-btn" type='submit'>Submit </button>
