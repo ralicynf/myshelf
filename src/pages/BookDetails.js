@@ -57,7 +57,9 @@ const BookDetails = ({ user }) => {
     //         navigate('/')
     //     }
     // }
-
+    const goToReview = () => {
+        navigate(`/books/${id}/bookreport`)
+    }
     useEffect(() => {
         handleBookDetails()
     }, [user])
@@ -79,8 +81,10 @@ const BookDetails = ({ user }) => {
                     </div>
                 </div>
             </div>
-            <div>
-                {/* <BookReport /> */}
+            <div className='flex-column center-column'>
+                <button id="review-btn" onClick={goToReview}>
+                    <h3>Add a book review</h3>
+                </button>
             </div>
         </section>
     )

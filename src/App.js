@@ -4,6 +4,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Book from './pages/BookDetails';
 import AddBook from './components/AddBook';
+import BookReport from './components/BookReport';
 import TBR from './pages/TBR';
 import { Routes, Route } from 'react-router-dom'
 import { CheckSession } from './services/Auth';
@@ -41,6 +42,7 @@ function App() {
           <Route path="/addbook" element={<AddBook user={user} setUser={setUser} />} />
           <Route path="/TBR" element={<TBR user={user} />} />
           <Route path="/books/:id" element={<Book user={user} />} />
+          <Route path="/books/:id/bookreport" element={<BookReport user={user} />} />
         </Routes>
       </main>
     </div>

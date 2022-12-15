@@ -140,6 +140,27 @@ body {
   text-align: center;
 }
 
+#review-btn {
+  width: 30vw;
+  text-align: center;
+  background-color: #242e3f;
+  border: 2px solid #1a2230;
+  border-radius: 20px;
+  filter: drop-shadow(1px 1px 1px #effafc);
+  color: #effafc;
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  transition-duration: 0.2s;
+}
+
+#review-btn:hover {
+  background-color: #5885af;
+  color: #1a2230;
+}
+
 .rotate-text {
   writing-mode: vertical-lr;
   text-align: center;
