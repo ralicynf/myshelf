@@ -42,7 +42,7 @@ function App() {
           <Route path="/addbook" element={<AddBook user={user} setUser={setUser} />} />
           <Route path="/TBR" element={<TBR user={user} />} />
           <Route path="/books/:id" element={<Book user={user} />} />
-          <Route path="/books/:id/bookreport" element={<BookReport user={user} />} />
+          <Route path="/books/b/:id/bookreport" element={<BookReport user={user} setUser={setUser}/>} />
         </Routes>
       </main>
     </div>

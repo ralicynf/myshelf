@@ -67,7 +67,7 @@ const BookDetails = ({ user }) => {
     }
 
     const goToReview = () => {
-        navigate(`/books/${id}/bookreport`)
+        navigate(`/books/b/${id}/bookreport`)
     }
     useEffect(() => {
         handleBookDetails()
@@ -136,9 +136,14 @@ const BookDetails = ({ user }) => {
             </div>
             
             <div className='flex-column center-column'>
-                <button id="review-btn" onClick={goToReview}>
-                    <h3>Add a book review</h3>
-                </button>
+                {myBookDetails.completed === true ? (
+                            <button id="review-btn" onClick={goToReview}>
+                                <h3>Add a book review</h3>
+                            </button>
+                        ) : (
+                            <h3 className='box'>This is on your TBR!</h3>
+                        ) }
+                
             </div>
         </section>
     )

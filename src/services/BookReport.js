@@ -9,9 +9,9 @@ export const GetBookReportByBook = async (bookId) => {
     }
 }
 
-export const CreateBookReport = async (formData) => {
+export const CreateBookReport = async (bookId, formData) => {
     try {
-        const res = await Client.post('/bookreports', formData)
+        const res = await Client.post(`/bookreports/b/${bookId}`, formData)
         return res.data
     } catch (error) {
         throw error

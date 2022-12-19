@@ -1,23 +1,27 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { GetBookReportByBook, CreateBookReport } from '../services/BookReport'
 
-const BookReport = ({ user, bookId }) => {
+const BookReport = ({ user }) => {
+    let bookId = useParams()
+    let book_id = parseInt(bookId.id)
 
     console.log(user)
 
     const initialState = {
-        review: '',
+        review: ' ',
         rating: null,
         readAgain: false,
-        userId: 7,
-        bookId: 17
+        userId: user.id,
+        bookId: book_id
     }
+    console.log(initialState)
 
     const [bookReports, setBookReports] = useState([])
-    const [newBookReport, setNewBookReport] = useState(initialState)
+    const [formState, setFormState] = useState(initialState)
 
     const handleBookReports = async () => {
-        const res = await GetBookReportByBook(bookId)
+        const res = await GetBookReportByBook(book_id)
         if (res) {
             setBookReports(res)
         }
@@ -30,30 +34,35 @@ const BookReport = ({ user, bookId }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await CreateBookReport(newBookReport)
-        setNewBookReport(initialState)
+        console.log("what is up")
+        await CreateBookReport(book_id, formState)
+        console.log(formState, 'hey')
         handleBookReports()
+        setFormState(initialState)
+        window.history.back()
     }
 
     const handleChange = (event) => {
-        setNewBookReport({...newBookReport, [event.target.id]: event.target.value})
+        setFormState({ ...formState, [event.target.id]: event.target.value })
     }
 
     return bookReports.length > 0 ? (
         <div className='login-box the-form form-items' >
             {bookReports.map((report) => (
-                <div>
+                <div key={report.id}>
                     <p>{report.review}</p>
                 </div>
             ))}
+
             <form onSubmit={handleSubmit}>
                 <label htmlFor='review'>Leave a review of the book!</label>
                 <input
                     type="text"
                     id='review'
-                    value={newBookReport.review}
+                    value={formState.review}
                     onChange={handleChange}
                 />
+                <button type="submit">Submit review</button>
             </form>
         </div>
     ) : (
@@ -64,9 +73,10 @@ const BookReport = ({ user, bookId }) => {
                 <input
                     type="text"
                     id='review'
-                    value=''
+                    value={formState.review}
                     onChange={handleChange}
                 />
+                <button type="submit">Submit review</button>
             </form>
         </div>
     )
