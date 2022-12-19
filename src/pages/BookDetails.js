@@ -7,6 +7,7 @@ import {
 } from '../services/Book'
 import axios from 'axios'
 import BookReport from '../components/BookReport'
+import BookReportCard from '../components/BookReportCards'
 import { CreateBookReport } from '../services/BookReport'
 
 const BookDetails = ({ user }) => {
@@ -137,9 +138,16 @@ const BookDetails = ({ user }) => {
             
             <div className='flex-column center-column'>
                 {myBookDetails.completed === true ? (
-                            <button id="review-btn" onClick={goToReview}>
-                                <h3>Add a book review</h3>
-                            </button>
+                            <div className='flex-column center-column'>
+                                <div>
+                                    <BookReportCard />
+                                </div>
+                                <div>
+                                    <button id="review-btn" onClick={goToReview}>
+                                        <h3>Add a book review</h3>
+                                    </button>
+                                </div>
+                            </div>
                         ) : (
                             <h3 className='box'>This is on your TBR!</h3>
                         ) }
